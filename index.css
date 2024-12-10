@@ -1,6 +1,10 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: Arial, sans-serif;
+    //background-color: #07182e;
+    
+   
 }
 .menu-bar {
     background:#07182e;
@@ -86,10 +90,7 @@
 
 }
 .myPapa {
-                background-image: url('luca-bravo-9l_326FISzk-unsplash.jpg');
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
+                background-color: #07182e;
                 height: 100vh;
                 box-sizing: border-box;
               }
@@ -142,4 +143,67 @@
     background: #07182e;
     inset: 5px;
 }
+
+.container{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1000px;
+    padding-bottom: 40rem;
+    background-color: #07182e;
+    position: relative;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 0;
+    right: 0;
+}
+
+#lenny{
+    background-color: aqua;
+    border-radius: 15px;
+    margin-top:40px;
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 40px); /* Default width for smaller screens */
+    max-width: 300px; /* Ensures cards don't get too large */
+    text-align: center;
+}
+#lenny:hover{
+    background: rgba(209, 209, 159, 0.755);
+}
+#lenny:active{
+    background: rgba(185, 165, 64, 0.664);
+}
+#lenny ul li{
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+#lenny ul{
+    
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    
+    
+    
+}
+#lenny h2{
+    justify-content: center;
+    margin: 20px;
+    
+}
+
+
+
+
+
 @import url("http://fonts.googleaplis.com/css2ffamily=Poppins:wght ")
+
+
