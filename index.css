@@ -1,383 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-    :root
-{
-    --bg-black-900:#f2f2fc;
-    --bg-black-100:#fdf9ff;
-    --bg-black-50:#e8dfec;
-    --text-black-900:#302e4d;
-    --text-black-700:#504e70;
+body {
+   font-family: Arial, sans-serif;
+   background-color: #f4f4f4;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+.container {
+   background-color: #fff;
+   padding: 30px;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   width: 100%;
+   max-width: 400px;
+}
+h2 {
+   text-align: center;
+   margin-bottom: 20px;
+}
+form {
+   display: flex;
+   flex-direction: column;
+}
+label {
+   margin-bottom: 8px;
+   font-size: 16px;
+}
+input[type="text"] {
+   padding: 10px;
+   margin-bottom: 15px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   font-size: 16px;
+}
+button {
+   padding: 10px;
+   background-color: #4CAF50;
+   color: white;
+   border: none;
+   border-radius: 4px;
+   font-size: 16px;
+   cursor: pointer;
+}
+button:hover {
+   background-color: #45a049;
+}    
+#myBtn {
+   background-color: #007bff;
+   color: white;
+}
 
-}
-body
-{
-   
-    line-height:1.5;
-    font-size:16px;
-    font-family:'Poppins'sans-serif;
-
-}
-*
-{
-    margin:0;
-    padding: 0;
-    outline: none;
-    text-decoration: none;
-    box-sizing: border-box;
-}
-::before,::after
-{
- box-sizing: border-box;                           
-}
-ul
-{
-    list-style: none;
-}
-.section
-{
-    min-height: 100vh;
-    display: block;
-    left: 270px;
-    background: var(--bg-black-900);
-    opacity: 1;
-    padding: 0 30px;
-    overflow-x: hidden;
-}
-.padd-15
-{
-    padding-left: 17px;
-    padding-right: 17px;
-}
-.container
-{
-    width: 100%;
-    max-width: 1100px;
-    margin: auto;
-    
-}
-.section .container
-{
-    padding-top: 70px;
-    padding-bottom: 70px;
-}
-.section-title h2
-{
-    font-size: 40px;
-    color: var(--text-black-900);
-    font-weight: 700;
-    position: relative;
-    left: 0;
-}
-.section-title h2::before
-{
-    content: '';
-    width: 50px;
-    height: 2px;
-    top: 100%;
-    
-    border-bottom: 5px solid var(--skin-color);
-    position: absolute;
-}
-.section-title h2::after
-{
-    content: '';
-    width: 25px;
-    height: 2px;
-    top: 100%;
-    border-bottom: 5px solid var(--skin-color);
-    position: absolute;
-    left: 0;
-    margin-top: 8px;
-}
-.row
-{
-    display: flex;
-    margin-right: -15px;
-    margin-left: -15px;
-    flex-wrap: wrap;
-    position: relative;
-}
-.aside
-{
-    top: 0;
-    left: 0;
-    display: flex;
-
-}
-.aside
-{
-    top: 0;
-    left: 0;
-    padding: 30px;
-    border-right: 1px solid var(--bg-black-50);
-    height: 100%;
-    width: 270px;
-    display: flex;
-    z-index: 10;
-    background-color: var(--bg-black-900);
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-}
-.aside .logo 
-{
-    position: absolute;
-    top: 50px;
-    
-    
-    text-transform: capitalize;
-}
-.aside .logo a
-{
-    font-family: 700;
-    padding: 15px 20px;
-    font-size: 30px;
-    letter-spacing: 5px;
-    position: relative;
-    color: var(--text-black-900);
-    transition: all 0.3s ease;
-    
-}
-.aside .logo a span
-{
-    font-family: 'Clicker Script', cursive;
-    color: var(--skin-color);
-}
-.aside .logo a::before
-{
-    content: '';
-    left: 0;
-    bottom: 0;
-    height: 20px;
-    width: 20px;
-    border-bottom: 5px solid var(--skin-color);
-    border-left: 5px solid var(--skin-color);
-    position: absolute;
-    
-
-}
-.aside .logo a::after
-{
-    content: '';
-    right: 0;
-    top: 0;
-    height: 20px;
-    width: 20px;
-    border-right: 5px solid var(--skin-color);
-    border-top: 5px solid var(--skin-color);
-    position: absolute;
-    
-}
-.aside .logo a:hover
-{
-    font-size: 40px;
-}
-.aside .nav li
-{
-    margin: 20px;
-    display: block;
-    
-}
-.aside .nav a
-{
-    
-    display: block;
-    padding: 5px 15px;
-    font-weight: 600;
-    color: var(--text-black-900);
-    font-size: 16px;
-    border-bottom:1px solid var(--bg-black-50) ;
-}
-.aside .nav li a i
-{
-    margin-right: 15px;
-}
-.aside .nav .active
-{
-    color: var(--skin-color);
-}
-.main-content
-{
-    padding-left: 270px;
-}
-/* home */
-.home
-{
-    min-height: 100vh;
-    display: flex;
-    color: var(--text-black-900);
-}
-.home .home-img img
-{
-    height: 400px;
-    width: 300px;
-}
-.home-info .name
-{
-    font-size: 30px;
-    color: var(--text-black-900);
-}
-.home-info span
-{
-    font-family: 'Clicker Script';
-    color: var(--skin-color);
-    
-}
-.home .home-info
-{
-    flex: 0 0 60%;
-    max-width: 60%;
-
-}
-.home .home-img
-{
-    flex: 0 0 40%;
-    max-width: 40%;
-    text-align: center;
-    position: relative;
-    margin-bottom: 100px;
-}
-.home .home-img::before
-{
-    content: '';
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    top: -20px;
-    left: 50px;
-    border-left: 5px solid var(--skin-color);
-    border-top: 5px solid var(--skin-color);
-}
-.home .home-img::after
-{
-    content: '';
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    bottom: -20px;
-    right: 60px;
-    border-bottom: 5px solid var(--skin-color);
-    border-right: 5px solid var(--skin-color);
-}
-.btn
-{
-    font-size: 16px;
-    border: none;
-    color: var(--bg-black-100);
-    background: var(--skin-color);
-    border-radius: 40px;
-    text-align: center;
-    padding: 12px 35px;
-    font-weight: 500;
-    white-space: nowrap;
-    display: inline-block;
-    margin-top: 35px;
-    transition: all 0.3s ease;
-
-}
-.btn:hover
-{
-    font-size: 18px;
-    background-color:  hwb(53 7% 47%);
-}
-.about-content
-{
-    flex: 0 0 100%;
-    max-width: 100%;
-}
-.about-content .about-text
-{
-    flex: 0 0 100%;
-    max-width: 100%;
-}
-.about-content .about-text h3
-{
-    font-size: 26px;
-    line-height: 50px;
-
-}
-.about-content .about-text h3 span
-{
-    color: var(--skin-color);
-}
-.about .about-content .about-text h3 p
-{
-    font-size: 18px;
-    color: var(--text-black-700);
-    line-height: 25px;
-    
-}
-.about .about-content .personal-info
-{
-    flex: 0 0 60%;
-    max-width: 60%;
-
-}
-.about .about-content .personal-info .info-item
-{
-    flex: 0 0 50%;
-    max-width: 50%;
-}
-.about .about-content .personal-info .info-item p
-{
-    padding: 10px 0;
-    border: 1px solid var(--bg-black-50);
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text-black-900);
-
-}
-.about .about-content .personal-info .buttons .btn
-{
-    margin-right: 15px;
-    margin-top: 10px;
-}
-.about .about-content .personal-info .buttons
-{
-    margin-top: 30px;
-}
-.about .about-content .skills
-{
-    flex: 0 0 40%;
-    max-width: 40%;
-    margin-top: 40px;
-}
-.about .about-content .skills .skill-item
-{
-    flex: 0 0 100%;
-    max-width: 100%;
-    margin-bottom: 25px;
-}
-.about .about-content .skills .skill-item h5{
-    line-height: 40px;
-    font-weight: 600;
-    font-size: 16px;
-    color: var(--text-black-900);
-    text-transform: capitalize;
-}
-.about .about-content .skills .skill-item .progress
-{
-    background-color: var(--bg-black-50);
-    height: 7px;
-    border-radius: 4px;
-    width: 100%;
-    position: relative;
-}
-.about .about-content .skills .skill-item .progress .progress-in
-{
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    border-radius: 4px;
-    background-color:var(--skin-color) ;
-}
-.about .about-content .skills .skill-item .skill-percentage
-{
-    position: absolute;
-    right: 0;
-    color:var(--text-black-900);
-    top: -40px;
-    font-weight: 400;
-    line-height: 40px;
+#nextBtn {
+   background-color: #28a745;
+   color: white;
+   display: none; /* Hidden initially */
 }

@@ -4,9 +4,7 @@ const username = document.getElementById("username");
 const myBtn = document.getElementById("myBtn");
 const homePlace = document.getElementById("homePlace");
 const course = document.getElementById("course");
-const nextBtn = document.getElementById("nextBtn")
-
-
+const nextBtn = document.getElementById("nextBtn");
 
 class User {
     static userCount = 0;
@@ -41,51 +39,44 @@ myBtn.onclick = function () {
 
     let newUser = new User(enteredUsername, enteredHomePlace, enteredCourse);
 
-    // Show user details
+    // Show user details inside the container
     mainPara.textContent = `Thank you for registering, ${newUser.username}! 
     It's great knowing you are from ${newUser.homePlace}. 
     Wow, I really like ${newUser.course}! All the best in your future career.`;
 
-    // Display total user count
-    if (User.userCount === 1) {
-        window.alert (`\nWe only have 1 user in our registration record.`);
-    } else {
-        window.alert(`\nWe currently have ${User.userCount} users in our registration record.`);
-    }
+    // **Show user count in window.alert each time a new user registers**
+    window.alert(`\nCurrently, we have ${User.userCount} user${User.userCount > 1 ? "s" : ""} in our registration record.`);
 
     // Hide the submit button, show the next button
     myBtn.style.display = "none";
     nextBtn.style.display = "block";
 
-    // If max users reached, close registration
-    let keyedIn = false
-    while(!keyedIn)
-    {
-        if (User.userCount >= 3) {
-            let userList = "Registered Users:\n";
-            User.users.forEach((user, index) => {
-                userList += `${index + 1}. ${user.username} from ${user.homePlace}, studying ${user.course} at Kisii University\n`;
-            });
+    let maxUsers = 3;
     
-            window.alert(userList);
-            window.alert("The registration portal is now closed. No more users can log in!");
-            break;
-    
-           
+    while (User.userCount >= maxUsers) {
+        let userList = "Registered Users:\n";
+        User.users.forEach((user, index) => {
+            userList += `${index + 1}. ${user.username} from ${user.homePlace}, studying ${user.course} at Kisii University\n`;
+        });
 
-        }
-         // Disable buttons
-         myBtn.disabled = true;
-         nextBtn.disabled = true;
-         // Click event for the "Next" button
-         nextBtn.onclick = function () {
-             clearInputs(); // Clear previous user input
-             mainPara.textContent = ""; // Clear displayed message
-             myBtn.style.display = "block"; // Show submit button
-             nextBtn.style.display = "none"; // Hide next button
-         };
+        window.alert(userList);
+        window.alert("The registration portal is now closed. No more users can log in!");
+
+        // Disable form when max users are reached
+        myBtn.disabled = true;
+        nextBtn.disabled = true;
+        username.disabled = true;
+        homePlace.disabled = true;
+        course.disabled = true;
+
+        break; // Break out of the loop
     }
-    
 };
 
-
+// Click event for the "Next" button
+nextBtn.onclick = function () {
+    clearInputs(); // Clear previous user input
+    mainPara.textContent = ""; // Clear displayed message
+    myBtn.style.display = "block"; // Show submit button
+    nextBtn.style.display = "none"; // Hide next button
+};
