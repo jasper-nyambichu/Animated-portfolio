@@ -49,6 +49,10 @@ myBtn.onclick = function () {
     // Display total user count
     if (User.userCount === 1) {
         window.alert (`\nWe only have 1 user in our registration record.`);
+        if(User.userCount === 0)
+        {
+            window.alert(`We have no users at the moment`)
+        }
     } else {
         window.alert(`\nWe currently have ${User.userCount} users in our registration record.`);
     }
@@ -74,17 +78,18 @@ myBtn.onclick = function () {
            
 
         }
-         // Disable buttons
-         myBtn.disabled = true;
-         nextBtn.disabled = true;
-         // Click event for the "Next" button
-         nextBtn.onclick = function () {
-             clearInputs(); // Clear previous user input
-             mainPara.textContent = ""; // Clear displayed message
-             myBtn.style.display = "block"; // Show submit button
-             nextBtn.style.display = "none"; // Hide next button
-         };
+         
     }
+    // Disable buttons
+    myBtn.disabled = true;
+    nextBtn.disabled = true;
+    // Click event for the "Next" button
+    nextBtn.onclick = function () {
+        clearInputs(); // Clear previous user input
+        mainPara.textContent = ""; // Clear displayed message
+        myBtn.style.display = "block"; // Show submit button
+        nextBtn.style.display = "none"; // Hide next button
+    };
     
 };
 
